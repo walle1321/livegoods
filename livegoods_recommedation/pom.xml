@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>livegoods_hot_product</artifactId>
+    <artifactId>livegoods_recommedation</artifactId>
 
     <dependencies>
         <dependency>
@@ -42,12 +42,12 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
-                    <imageName>livegoods/hotproduct:1.0</imageName>
+                    <imageName>livegoods/recommendation:1.0</imageName>
                     <baseImage>openjdk:latest</baseImage>
                     <dockerHost>http://192.168.8.137:2375</dockerHost>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <exposes>
-                        <expose>9001</expose>
+                        <expose>9002</expose>
                     </exposes>
                     <resources>
                         <resources>

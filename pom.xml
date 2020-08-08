@@ -16,6 +16,7 @@
         <module>livegoods_commons</module>
         <module>livegoods_gateway</module>
         <module>livegoods_hot_product</module>
+        <module>livegoods_recommedation</module>
     </modules>
     <properties>
         <spring-boot-version>2.2.5.RELEASE</spring-boot-version>
