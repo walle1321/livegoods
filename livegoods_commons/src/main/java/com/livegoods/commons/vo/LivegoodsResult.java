@@ -6,9 +6,12 @@ import lombok.Data;
 public class LivegoodsResult {
     //正确返回200.错误500
     private int status;
+    //热门商品所需的返回结果
     private Object results;
     private String msg;
     private Object data;
+    //分页返回结果，是否还有更多对象
+    private boolean hasMore;
 
     //只返回status=200的静态方法
     public static LivegoodsResult ok(){

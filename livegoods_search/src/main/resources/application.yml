@@ -1,0 +1,19 @@
+livegoods:
+  search:
+    haveIndex: false
+spring:
+  profiles:
+    active: mongodb,commons
+  application:
+    name: livegoods-search
+  elasticsearch:
+    rest:
+      uris: http://192.168.8.138:9200
+server:
+  port: 9003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.8.137:8761/eureka/
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: livegoods-details
+  profiles:
+    active: mongodb,commons
+server:
+  port: 9004
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.8.137:8761/eureka/
+  instance:
+    prefer-ip-address: true # 优选IP作为服务的注册、发现、访问地址。

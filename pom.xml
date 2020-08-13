@@ -17,6 +17,9 @@
         <module>livegoods_gateway</module>
         <module>livegoods_hot_product</module>
         <module>livegoods_recommedation</module>
+        <module>livegoods_search</module>
+        <module>livegoods_details</module>
+        <module>livegoods_cache_redis</module>
     </modules>
     <properties>
         <spring-boot-version>2.2.5.RELEASE</spring-boot-version>
