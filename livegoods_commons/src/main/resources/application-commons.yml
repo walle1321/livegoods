@@ -1,4 +1,4 @@
 livegoods:
   banner:
-   nginx:
-     host: http://192.168.8.129:8888/
+    nginx:
+      host: http://192.168.8.129:8888/

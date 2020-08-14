@@ -1,16 +1,66 @@
 package com.livegoods.mongodb;
 
 import com.jyj.livegoods.pojo.Banner;
+import com.jyj.livegoods.pojo.Comment;
 import com.jyj.livegoods.pojo.Item;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.util.*;
-
+//
 //@SpringBootTest(classes = {MongoDBAPP.class})
 //@RunWith(SpringRunner.class)
 public class TestDatas {
 //    @Autowired
     private MongoTemplate mongoTemplate;
+
+
+//    @Test
+    public void insertComment(){
+        
+        List<Comment> list = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            Comment comment = new Comment();
+            comment.setUsername("1921665178"+i%10);
+            switch (i%2){
+                case 1:
+                    comment.setComment("我是评论"+i);
+                    comment.setItemId("5f2d36ae63551600739402a1");
+                    comment.setStar(i%2+2);
+                    break;
+                case 2:
+                    comment.setComment("group1/M00/00/00/wKgIgV8oplmADSvRAAjIoXS-cuE587.png");
+                    comment.setItemId("5f2d36ae63551600739402a1");
+                    comment.setStar(i);
+
+                    break;
+                case 3:
+                    comment.setComment("group1/M00/00/00/wKgIgV8opmKADj6yAAro96E3Lio941.png");
+                    comment.setItemId("5f2d36ae63551600739402a"+i);
+                    comment.setStar(i);
+                    break;
+                case 4:
+                    comment.setComment("group1/M00/00/00/wKgIgV8opmeAGZyOAAuC40wnByU315.png");
+                    comment.setItemId("5f2d36ae63551600739402a"+i);
+                    comment.setStar(i);
+                    break;
+                case 5:
+                    comment.setComment("group1/M00/00/00/wKgIgV8opmuASY8zABS0LiTh-88549.png");
+                    comment.setItemId("5f2d36ae63551600739402a"+i);
+                    comment.setStar(i);
+                    break;
+                case 0:
+                    comment.setComment("我是评论"+i);
+                    comment.setItemId("5f2d36ae63551600739402a0");
+                    comment.setStar(i);
+                    break;
+            }
+            System.out.println(comment.toString());
+            list.add(comment);
+        }
+        mongoTemplate.insert(list,Comment.class);
+        
+
+    }
 
 //    @Test
     public void insertItems(){
@@ -252,34 +302,5 @@ public class TestDatas {
     }
 
 
-//        List<Banner> list = new ArrayList<>();
-//        Banner banner1 = new Banner();
-//        banner1.setCreateTime(new Date());
-//        banner1.setUrl("group1/M00/00/00/wKgIgV8opiSASrSeABLGy04UWBI321.png");
-//        Banner banner2 = new Banner();
-//        banner2.setCreateTime(new Date());
-//        banner2.setUrl("group1/M00/00/00/wKgIgV8oplmADSvRAAjIoXS-cuE587.png");
-//        Banner banner3 = new Banner();
-//        banner3.setCreateTime(new Date());
-//        banner3.setUrl("group1/M00/00/00/wKgIgV8opmKADj6yAAro96E3Lio941.png");
-//        Banner banner4 = new Banner();
-//        banner4.setCreateTime(new Date());
-//        banner4.setUrl("group1/M00/00/00/wKgIgV8opmeAGZyOAAuC40wnByU315.png");
-//        Banner banner5 = new Banner();
-//        banner5.setCreateTime(new Date());
-//        banner5.setUrl("group1/M00/00/00/wKgIgV8opmuASY8zABS0LiTh-88549.png");
-//        Banner banner6 = new Banner();
-//        banner6.setCreateTime(new Date());
-//        banner6.setUrl("group1/M00/00/00/wKgIgV8opnCATQ4RABHVEPBnO7M298.png");
-//        list.add(banner1);
-//        list.add(banner2);
-//        list.add(banner3);
-//        list.add(banner4);
-//        list.add(banner5);
-//        list.add(banner6);
-//        mongoTemplate.insert(list, Banner.class);
-//
-//        System.out.println(list);
-//    }
 }
 

@@ -1,13 +1,11 @@
-package com.kivegoods.details;
+package com.livegoods.comment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-@EnableCaching
-public class DetailsApp {
+public class CommentApp {
     public static void main(String[] args) {
-        SpringApplication.run(DetailsApp.class,args);
+        SpringApplication.run(CommentApp.class,args);
     }
 }
