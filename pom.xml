@@ -21,6 +21,8 @@
         <module>livegoods_details</module>
         <module>livegoods_cache_redis</module>
         <module>livegoods_comment</module>
+        <module>livegoods_buytime</module>
+        <module>livegoods_login</module>
     </modules>
     <properties>
         <spring-boot-version>2.2.5.RELEASE</spring-boot-version>

@@ -49,6 +49,18 @@ spring:
             - Query=id
             - Query=page
 
+        - id: buytime
+          uri: lb://livegoods-buytime
+          predicates:
+            - Path=/buytime
+            - Query=id
+
+        - id: login
+          uri: lb://livegoods-login
+          predicates:
+            - Path=/sendyzm,/login
+              #- Query=iphone  # 配置后，无法实现路由转发。 此predicate谓词处理器，只检查请求头中的请求参数。
+
 eureka:
   client:
     service-url:

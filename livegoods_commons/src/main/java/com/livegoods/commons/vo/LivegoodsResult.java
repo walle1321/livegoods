@@ -13,6 +13,7 @@ public class LivegoodsResult {
     //分页返回结果，是否还有更多对象
     private boolean hasMore;
 
+
     //只返回status=200的静态方法
     public static LivegoodsResult ok(){
         LivegoodsResult result = new LivegoodsResult();
