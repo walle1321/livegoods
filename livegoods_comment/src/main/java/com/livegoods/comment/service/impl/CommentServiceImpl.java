@@ -1,7 +1,9 @@
 package com.livegoods.comment.service.impl;
 
 import com.jyj.livegoods.pojo.Comment;
+import com.jyj.livegoods.pojo.Order;
 import com.livegoods.comment.dao.CommentDao;
+import com.livegoods.comment.dao.OrderDao;
 import com.livegoods.comment.service.CommentService;
 import com.livegoods.commons.vo.LivegoodsResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private CommentDao commentDao;
+    @Autowired
+    private OrderDao orderDao;
 
     @Override
     public LivegoodsResult showComment(String itemId,int page,int rows) {
@@ -64,6 +68,20 @@ public class CommentServiceImpl implements CommentService {
             result.setHasMore(false);
         }
         return result;
+    }
+
+    @Override
+    public LivegoodsResult insertComment(String orderId, String feelback) {
+        Order order = orderDao.finfByOrderId(orderId);
+        Comment comment = new Comment();
+        comment.setItemId(order.getItemId());
+        comment.setUsername(order.getUsername());
+        comment.setComment(feelback);
+        comment.setStar(3);//默认评星，前端没给
+        commentDao.save(comment);
+        //修改订单表的commentState属性，2为已评论
+        orderDao.updateCommentState(orderId,2);
+        return LivegoodsResult.ok();
     }
 
 }

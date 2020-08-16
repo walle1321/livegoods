@@ -12,4 +12,7 @@ public interface CommentDao {
 
     //分页查询要搜索页码，进行判断是否是最后一页
     long selectCountByItemId(String itemId);
+
+    //新增
+    void save(Comment comment);
 }

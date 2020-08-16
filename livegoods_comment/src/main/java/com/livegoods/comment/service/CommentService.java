@@ -7,4 +7,7 @@ public interface CommentService {
     //展示商品评论
     LivegoodsResult showComment(String itemId,int page,int rows);
 
+    //新增商品评论
+    LivegoodsResult insertComment(String orderId,String feelback);
+
 }

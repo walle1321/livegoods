@@ -23,6 +23,10 @@
         <module>livegoods_comment</module>
         <module>livegoods_buytime</module>
         <module>livegoods_login</module>
+        <module>livegoods_rabbit_publisher</module>
+        <module>livegoods_buyaction</module>
+        <module>livegoods_buyaction_message_consumer</module>
+        <module>livegoods_order</module>
     </modules>
     <properties>
         <spring-boot-version>2.2.5.RELEASE</spring-boot-version>
@@ -81,6 +85,7 @@
                 <artifactId>txlcn-txmsg-netty</artifactId>
                 <version>${lcn-version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

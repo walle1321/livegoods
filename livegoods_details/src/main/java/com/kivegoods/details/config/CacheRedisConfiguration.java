@@ -5,6 +5,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 
 @Configuration
 public class CacheRedisConfiguration extends RedisCacheConfiguration {
@@ -16,5 +17,11 @@ public class CacheRedisConfiguration extends RedisCacheConfiguration {
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory){
         return super.cacheManager(redisConnectionFactory);
+    }
+
+    @Override
+    @Bean
+    protected RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        return super.redisTemplate(redisConnectionFactory);
     }
 }

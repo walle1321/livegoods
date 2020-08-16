@@ -10,12 +10,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class DetailsServiceImpl implements DetailsService {
 
+
     @Autowired
     private DetailsDao detailsDao;
 
     @Override
-    @Cacheable(cacheNames = "com:livegoods:details", key = "'getDetails('+#id+')'")
+    @Cacheable(cacheNames = "com:livegoods:details",key = "'getDetails('+#id+')'")
     public Item showDetails(String id) {
-        return detailsDao.selectById(id);
+        Item item = detailsDao.selectById(id);
+        System.out.println("要存入缓存的数据"+item.toString());
+        return item;
     }
 }

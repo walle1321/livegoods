@@ -59,8 +59,25 @@ spring:
           uri: lb://livegoods-login
           predicates:
             - Path=/sendyzm,/login
-              #- Query=iphone  # 配置后，无法实现路由转发。 此predicate谓词处理器，只检查请求头中的请求参数。
+            #- Query=iphone  # 配置后，无法实现路由转发。 此predicate谓词处理器，只检查请求头中的请求参数。
 
+        - id: buyaction
+          uri: lb://livegoods-buyaction
+          predicates:
+            - Path=/buyaction
+            - Query=id
+            - Query=user
+
+        - id: order
+          uri: lb://livegoods-order
+          predicates:
+            - Path=/order
+            - Query=user
+
+        - id: feelback
+          uri: lb://livegoods-comment
+          predicates:
+            - Path=/feelback
 eureka:
   client:
     service-url:

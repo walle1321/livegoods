@@ -2,3 +2,14 @@ livegoods:
   banner:
     nginx:
       host: http://192.168.8.129:8888/
+
+  redis:
+    item:
+      prefix: com:livegoods:details
+      suffix: getDetails
+
+  rabbit:
+    buy:
+      exchange: livegoodsBuyExchange
+      routingKey: livegoodsBuyRK
+      queue: livegoodsBuyQueue

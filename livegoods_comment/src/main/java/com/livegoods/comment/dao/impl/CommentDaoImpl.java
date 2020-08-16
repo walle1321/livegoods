@@ -36,4 +36,9 @@ public class CommentDaoImpl implements CommentDao {
         return comments.size();
 
     }
+
+    @Override
+    public void save(Comment comment) {
+        mongoTemplate.save(comment);
+    }
 }
